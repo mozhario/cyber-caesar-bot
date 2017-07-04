@@ -62,6 +62,3 @@ reports/
 
 #frontend
 node_modules/
-
-
-config.py
