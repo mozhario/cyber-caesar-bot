@@ -2,6 +2,8 @@
 
 import os
 import random
+import requests
+import json
 from flask import Flask, request
 
 import config
@@ -11,6 +13,10 @@ import telebot
 bot = telebot.TeleBot(config.TOKEN)
 
 server = Flask(__name__)
+
+
+def strip_command(text):
+    return " ".join(text.split(' ')[1:])
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -28,8 +34,17 @@ def repeat_all_messages(message):
         greeting = "Ave!"
         bot.send_message(message.chat.id, greeting)
 
-    else:
-        bot.send_message(message.chat.id, 'Привет, Санёчек ;)')
+
+@bot.message_handler(commands=['break'])
+def handle_decrypt(message):
+    inpt = strip_command(message.text)
+
+    resp = requests.get("https://cybercaesar.herokuapp.com/break-cipher/", params={"text": inpt})
+
+    resp = resp.json()
+    msg_text = "key: %d \nDecrypted text: %s" % (resp["key"], resp["decrypted"])
+
+    bot.send_message(message.chat.id, msg_text)
 
 
 @server.route("/bot", methods=['POST'])

@@ -15,4 +15,7 @@ def get_env_variable(var_name):
         raise KeyError(error_msg)
 
 
+# telegram token
 TOKEN = get_env_variable("CAESAR_TG_TOKEN")
+
+CAESAR_API_URL = "https://cybercaesar.herokuapp.com/"
