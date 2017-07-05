@@ -88,7 +88,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url="https://cyber-caesar-bot.herokuapp.com/bot")
+    bot.set_webhook(url=config.WEBHOOK_URL)
     return "!", 200
 
 

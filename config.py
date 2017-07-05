@@ -20,6 +20,8 @@ TOKEN = get_env_variable("CAESAR_TG_TOKEN")
 
 CAESAR_API_URL = "https://cybercaesar.herokuapp.com/"
 
+WEBHOOK_URL = "https://cyber-caesar-bot.herokuapp.com/bot"
+
 CAESAR_QUOTES = (
     'Veni, vidi, vici.',
     'I came, I saw, I conquered.',
