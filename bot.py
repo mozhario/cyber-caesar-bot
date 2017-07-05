@@ -27,6 +27,34 @@ def handle_start_help(message):
         bot.send_message(message.chat.id, readme_text, parse_mode="Markdown")
 
 
+@bot.message_handler(commands=['encrypt'])
+def handle_encrypt(message):
+    inpt = strip_command(message.text)
+    params = inpt.split("#")
+    text = params[0]
+    key = params[1]
+
+    resp = requests.get("https://cybercaesar.herokuapp.com/encrypt/", params={"original_text": text, "rotation": key})
+
+    resp = resp.json()
+
+    bot.send_message(message.chat.id, resp["encrypted"])
+
+
+@bot.message_handler(commands=['decrypt'])
+def handle_encrypt(message):
+    inpt = strip_command(message.text)
+    params = inpt.split("#")
+    text = params[0]
+    key = params[1]
+
+    resp = requests.get("https://cybercaesar.herokuapp.com/decrypt/", params={"encrypted_text": text, "rotation": key})
+
+    resp = resp.json()
+
+    bot.send_message(message.chat.id, resp["decrypted"])
+
+
 @bot.message_handler(commands=['break'])
 def handle_decrypt(message):
     inpt = strip_command(message.text)
