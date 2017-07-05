@@ -70,9 +70,13 @@ def handle_decrypt(message):
 @bot.message_handler(content_types=["text"])
 def repeat_all_messages(message):
     
-    if 'привет' in message.text.lower():
+    if 'hello' in message.text.lower():
         greeting = "Ave!"
         bot.send_message(message.chat.id, greeting)
+
+    else:
+        quote = random.choice(config.CAESAR_QUOTES)
+        bot.send_message(message.chat.id, quote)
 
 
 @server.route("/bot", methods=['POST'])

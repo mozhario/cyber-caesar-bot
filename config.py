@@ -19,3 +19,13 @@ def get_env_variable(var_name):
 TOKEN = get_env_variable("CAESAR_TG_TOKEN")
 
 CAESAR_API_URL = "https://cybercaesar.herokuapp.com/"
+
+CAESAR_QUOTES = (
+    'Veni, vidi, vici.',
+    'I came, I saw, I conquered.',
+    'The die is cast.',
+    'Sed fortuna, quae plurimum potest cum in reliquis rebus tum praecipue in bello, parvis momentis magnas rerum commutationes efficit; ut tum accidit.',
+    'Fortune, which has a great deal of power in other matters but especially in war, can bring about great changes in a situation through very slight forces.',
+    'I assure you I had rather be the first man here than the second man in Rome.',
+    'Alea iacta est.'
+)
