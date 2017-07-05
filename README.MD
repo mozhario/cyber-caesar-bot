@@ -5,9 +5,9 @@ I live at [@cyber_caesar_bot](https://t.me/cyber_caesar_bot)
 
 ### Available commands
 
- - /encrypt <text> # <key>
- - /decrypt <text> # <key>
- - /break <encrypted-text>
+ - /encrypt text # key
+ - /decrypt text # key
+ - /break encrypted-text
 
 Note that you should use "#" character as the parameters delimiter.
 
