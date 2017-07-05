@@ -5,9 +5,9 @@ I live at [@cyber_caesar_bot](https://t.me/cyber_caesar_bot)
 
 ### Available commands
 
-/encrypt <text> # <key>
-/decrypt <text> # <key>
-/break <encrypted-text>
+ - /encrypt <text> # <key>
+ - /decrypt <text> # <key>
+ - /break <encrypted-text>
 
 Note that you should use "#" character as the parameters delimiter.
 
@@ -20,6 +20,7 @@ Note that you should use "#" character as the parameters delimiter.
 pip install -r requirements.txt
 ```
 Recommended to use virtualenv.
+
 4. Run. This can be achieved in two ways:
  - Configure bot to use polling and run bot.py from anywhere from console.
  - Deploy somewhere on the web and set your own webhook in the config.py
