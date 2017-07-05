@@ -1,7 +1,8 @@
 Ave!
 Heard of Caesar cipher?
 It's a simple shift cipher. Just choose the rotation key, and every letter will be cyclically sifted of it's value.
-I can encrypt and decrypt text for you. Also I can try to breek the cipher.
+
+I can encrypt and decrypt text for you. Also I can try to break the cipher.
 
 *Example:*
 Key: 23
