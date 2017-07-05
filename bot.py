@@ -27,14 +27,6 @@ def handle_start_help(message):
         bot.send_message(message.chat.id, readme_text, parse_mode="Markdown")
 
 
-@bot.message_handler(content_types=["text"])
-def repeat_all_messages(message):
-    
-    if 'привет' in message.text.lower():
-        greeting = "Ave!"
-        bot.send_message(message.chat.id, greeting)
-
-
 @bot.message_handler(commands=['break'])
 def handle_decrypt(message):
     inpt = strip_command(message.text)
@@ -45,6 +37,14 @@ def handle_decrypt(message):
     msg_text = "key: %d \nDecrypted text: %s" % (resp["key"], resp["decrypted"])
 
     bot.send_message(message.chat.id, msg_text)
+
+
+@bot.message_handler(content_types=["text"])
+def repeat_all_messages(message):
+    
+    if 'привет' in message.text.lower():
+        greeting = "Ave!"
+        bot.send_message(message.chat.id, greeting)
 
 
 @server.route("/bot", methods=['POST'])
